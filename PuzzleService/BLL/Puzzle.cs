@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PuzzleService.BLL.Services;
+using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PuzzleService.BLL
 {
-    public class WorkWithImage
+    public class Puzzle : IPuzzle
     {
         /// <summary>
         /// Ріже картинку на прямоугольники
@@ -17,7 +18,7 @@ namespace PuzzleService.BLL
         /// <param name="hRect"></param>
         /// <param name="wRect"></param>
         /// <returns></returns>
-        public static Bitmap[,] GetPuzzle(Image image, int hRect, int wRect)
+        public  Bitmap[,] GetPuzzle(Image image, int hRect, int wRect)
         {
             int width = image.Width / wRect;
             int height = image.Height / hRect;
@@ -39,7 +40,7 @@ namespace PuzzleService.BLL
         /// </summary>
         /// <param name="bitmaps"></param>
         /// <returns></returns>
-        public static Bitmap[,] MixPuzzle(Bitmap[,] bitmaps)
+        public  Bitmap[,] MixPuzzle(Bitmap[,] bitmaps)
         {
             Random rnd = new Random();
             Bitmap[,] clone = bitmaps;
@@ -61,7 +62,7 @@ namespace PuzzleService.BLL
             return bitmaps;
         }
 
-        public static Image ConvertImageFromBase64(string bimage)
+        public  Image ConvertFromBase64ToImage(string bimage)
         {
             var bytes = Convert.FromBase64String(bimage);
 

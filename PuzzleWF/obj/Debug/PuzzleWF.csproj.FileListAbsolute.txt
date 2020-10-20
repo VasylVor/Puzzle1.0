@@ -8,3 +8,13 @@ D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.csproj.GenerateResource.cache
 D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.csproj.CoreCompileInputs.cache
 D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.exe
 D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.pdb
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\bin\Debug\PuzzleWF.exe.config
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\obj\Debug\PuzzleWF.exe
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\obj\Debug\PuzzleWF.pdb
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\bin\Debug\PuzzleWF.exe
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\bin\Debug\PuzzleWF.pdb
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\obj\Debug\PuzzleWF.csprojAssemblyReference.cache
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\obj\Debug\PuzzleWF.Form1.resources
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\obj\Debug\PuzzleWF.Properties.Resources.resources
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\obj\Debug\PuzzleWF.csproj.GenerateResource.cache
+D:\Воронін Василь\домашка\Puzzle1.0\PuzzleWF\obj\Debug\PuzzleWF.csproj.CoreCompileInputs.cache
