@@ -1,0 +1,10 @@
+D:\My projects\Puzzle\PuzzleWF\bin\Debug\PuzzleWF.exe.config
+D:\My projects\Puzzle\PuzzleWF\bin\Debug\PuzzleWF.exe
+D:\My projects\Puzzle\PuzzleWF\bin\Debug\PuzzleWF.pdb
+D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.csprojAssemblyReference.cache
+D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.Form1.resources
+D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.Properties.Resources.resources
+D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.csproj.GenerateResource.cache
+D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.csproj.CoreCompileInputs.cache
+D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.exe
+D:\My projects\Puzzle\PuzzleWF\obj\Debug\PuzzleWF.pdb
