@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PuzzleAng"
+    }
+  },
+  "defaultProject": "PuzzleAng",
+  "cli": {
+    "analytics": "23b97db1-7329-4cbf-943a-eeac91a11cdb"
+  }
 }
