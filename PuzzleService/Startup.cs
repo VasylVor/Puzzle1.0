@@ -40,7 +40,13 @@ namespace PuzzleService
 
             app.UseRouting();
 
-         //   app.UseAuthorization();
+            //   app.UseAuthorization();
+            //app.UseHttpsRedirection();
+
+            //app.UseCors(x => x
+            //    .AllowAnyOrigin()
+            //    .AllowAnyMethod()
+            //    .AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {

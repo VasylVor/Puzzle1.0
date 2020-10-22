@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { PuzzleServ } from './Service/PuzzleService';
+import { PuzzleReq } from './Service/PuzzleReq';
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +10,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent 
+{
   postData = {
     test: 'My content',
   }
@@ -16,14 +20,45 @@ export class AppComponent {
  /* data{
     image: base64_
   }*/
-  
-  constructor(private http: HttpClient){
-    this.http.get(this.url).toPromise().then(data =>{
-      console.log(data);
-    });
 
-    /*OnFileSelected(event){
-
-    }*/
+  selectedFile = null;
+  /*constructor(private http: HttpClient){
+    
+  }*/
+  constructor(private httpService: PuzzleServ){}
+  OnFileSelected(event){
+    this.selectedFile = event.target.file[0];
   }
+
+  OnGetPuzzle()
+  {
+    var fileUplodVM: PuzzleReq=
+    {
+      Id:1,
+ //     BImage:this.selectedFile.toString(),
+      HeightRect:200,
+      WidthRect:200
+    };
+
+    /*const fd = new FormData();
+    if(this.selectedFile==null)
+    {
+      alert("Please select file");
+    }
+    else
+    {     
+     
+    } */ 
+
+    console.log(this.httpService.GetPuzzle(fileUplodVM).subscribe());
+    /*fd.append('image', this.selectedFile,this.selectedFile.name);*/
+    /*this.http.post(this.url,fileUplodVM).toPromise().then(data =>
+    {
+      console.log(data);
+    })*/
+  }; 
 }
+
+
+
+

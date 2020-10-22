@@ -12,8 +12,8 @@ namespace PuzzleService.Model
     {
         [DataMember]
         public int Id { get; set; }
-        [DataMember]
-        public string BImage { get; set; }
+        //[DataMember]
+        //public string BImage { get; set; }
         [DataMember]
         public int WidthRect { get; set; }
         [DataMember]
