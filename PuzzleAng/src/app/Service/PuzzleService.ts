@@ -7,7 +7,7 @@ import {PuzzleReq} from './PuzzleReq';
   })
 export class PuzzleServ{
     constructor(private http: HttpClient){}
-    url = 'http://localhost:52871/api/CreatePuzzle';
+    url = 'http://localhost:52871/api/GetPuzzle';
 
     GetPuzzle(puzzleReq: PuzzleReq){
         const req = {id: puzzleReq.Id, heightR: puzzleReq.HeightRect, weidth: puzzleReq.WidthRect};

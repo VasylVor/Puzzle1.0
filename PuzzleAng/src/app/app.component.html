@@ -3,9 +3,9 @@
 <div class="toolbar" role="banner">
 
 </div>
-
+{{imageError}}
 <div class="content" role="main">
-  <input type="file" /> 
+  <input type="file" (change)="OnFileSelected($event)" /> 
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
 </div>
 

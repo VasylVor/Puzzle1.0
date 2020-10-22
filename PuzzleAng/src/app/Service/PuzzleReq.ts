@@ -1,6 +1,6 @@
 export class PuzzleReq{
   Id: number;
- // BImage: string;
+  BImage: string;
   WidthRect: number;
   HeightRect: number;
 }

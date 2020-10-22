@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 namespace PuzzleService.Model
 {
     [DataContract]
-    public class PuzzleReq
+    public class PuzzleResp
     {
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public string BImage { get; set; }
+        public string Name { get; set; }
         [DataMember]
-        public int WidthRect { get; set; }
-        [DataMember]
-        public int HeightRect { get; set; }
+        public List<string> ImageLst { get; set; }
     }
 }

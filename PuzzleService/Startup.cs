@@ -41,12 +41,12 @@ namespace PuzzleService
             app.UseRouting();
 
             //   app.UseAuthorization();
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
-            //app.UseCors(x => x
-            //    .AllowAnyOrigin()
-            //    .AllowAnyMethod()
-            //    .AllowAnyHeader());
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
