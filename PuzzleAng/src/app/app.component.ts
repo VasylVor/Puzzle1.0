@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,24 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'PuzzleAng';
+  postData = {
+    test: 'My content',
+  }
+  
+  url = 'http://localhost:52871/api/getpuzzle';
+ /* data{
+    image: base64_
+  }*/
+  
+  constructor(private http: HttpClient){
+    this.http.get(this.url).toPromise().then(data =>{
+      console.log(data);
+    });
+
+    /*OnFileSelected(event){
+
+    }*/
+  }
 }

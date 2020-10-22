@@ -21,11 +21,11 @@ namespace PuzzleService.Controllers
             this.puzzle = puzzle;
         }
         [HttpGet]
-        public bool CreatePuzzle([FromBody] PuzzleReq request)
+        public bool CreatePuzzle()//[FromBody] PuzzleReq request
         {
-            //Image temp = Image.FromFile(@"D:\My projects\Puzzle\PuzzleWF\Image\brain.jpg"); ;// берем картинку или Image.FromFile("D:\\123.png");
-            Image img = puzzle.ConvertFromBase64ToImage(request.BImage);
-            Bitmap[,] bmp = puzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //puzzle.GetPuzzle(temp, 100, 100);//cut image
+            Image temp = Image.FromFile(@"D:\My projects\Puzzle\PuzzleWF\Image\brain.jpg"); ;// берем картинку или Image.FromFile("D:\\123.png");
+           // Image img = puzzle.ConvertFromBase64ToImage(request.BImage);
+            Bitmap[,] bmp = puzzle.GetPuzzle(temp, 100, 100);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
             Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
 
             return true;
