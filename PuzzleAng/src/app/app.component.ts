@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { PuzzleServ } from './Service/PuzzleService';
 import { PuzzleReq } from './Service/PuzzleReq';
+import { PuzzleResp } from './Service/PuzzleResp';
 
 
 @Component({
@@ -25,6 +26,9 @@ export class AppComponent
   imageError: string;
   isImageSaved: boolean;
   cardImageBase64: string;
+  ImageName: string;
+  imageslst = PuzzleResp;
+  lst:[];
   /*constructor(private http: HttpClient){
     
   }*/
@@ -52,10 +56,14 @@ export class AppComponent
             this.imageError = 'Only Images are allowed ( JPG | PNG )';
             return false;
         }
+
+        this.ImageName = fileInput.target.files[0].name;
+
         const reader = new FileReader();
         reader.onload = (e: any) => {
             const image = new Image();
             image.src = e.target.result;
+
             image.onload = rs => {
                 const img_height = rs.currentTarget['height'];
                 const img_width = rs.currentTarget['width'];
@@ -105,7 +113,8 @@ export class AppComponent
      
     } */ 
 
-    console.log(this.httpService.GetPuzzle(fileUplodVM).subscribe());
+    var resp = this.httpService.GetPuzzle(fileUplodVM).subscribe();
+    
     /*fd.append('image', this.selectedFile,this.selectedFile.name);*/
     /*this.http.post(this.url,fileUplodVM).toPromise().then(data =>
     {

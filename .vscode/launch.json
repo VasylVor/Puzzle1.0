@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Angular",
-            "url": "http://localhost:4200",
+            "url": "http://localhost:4200/",
             "webRoot": "${workspaceFolder}/PuzzleAng"
         }
     ]

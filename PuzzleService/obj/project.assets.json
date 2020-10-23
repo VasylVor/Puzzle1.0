@@ -6179,23 +6179,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vvoronin4035\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VVoronin_New\\Puzzle1.0\\PuzzleService\\PuzzleService.csproj",
+      "projectUniqueName": "D:\\My projects\\Puzzle\\PuzzleService\\PuzzleService.csproj",
       "projectName": "PuzzleService",
-      "projectPath": "D:\\VVoronin_New\\Puzzle1.0\\PuzzleService\\PuzzleService.csproj",
-      "packagesPath": "C:\\Users\\vvoronin4035\\.nuget\\packages\\",
-      "outputPath": "D:\\VVoronin_New\\Puzzle1.0\\PuzzleService\\obj\\",
+      "projectPath": "D:\\My projects\\Puzzle\\PuzzleService\\PuzzleService.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\My projects\\Puzzle\\PuzzleService\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vvoronin4035\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

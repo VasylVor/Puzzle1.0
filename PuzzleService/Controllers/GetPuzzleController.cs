@@ -27,10 +27,13 @@ namespace PuzzleService.Controllers
             Image img = puzzle.ConvertFromBase64ToImage(request.BImage);
             Bitmap[,] bmp = puzzle.GetPuzzle(img, 100, 100);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
             Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
-            PuzzleResp resp = new PuzzleResp();
+            List<string> lstImage = new List<string>();
+            
             for (int i = 0; i < rndBmp.GetLength(0) - 1; i++)
                 for (int j = 0; j < rndBmp.GetLength(1) - 1; j++)
-                    resp.ImageLst.Add(rndBmp[i, j].ToString());
+                    lstImage.Add(rndBmp[i, j].ToString());
+
+            PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage};
             return resp;
         }
     }

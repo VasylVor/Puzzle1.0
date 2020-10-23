@@ -64,7 +64,8 @@ namespace PuzzleService.BLL
 
         public  Image ConvertFromBase64ToImage(string bimage)
         {
-            var bytes = Convert.FromBase64String(bimage);
+            int index = bimage.IndexOf(',') + 1;
+            var bytes = Convert.FromBase64String(bimage.Remove(0, index));
 
             Image image;
             using (MemoryStream ms = new MemoryStream(bytes))

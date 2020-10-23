@@ -37,6 +37,10 @@ namespace PuzzleService
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+
+            }
 
             app.UseRouting();
 

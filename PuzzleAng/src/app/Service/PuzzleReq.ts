@@ -4,3 +4,4 @@ export class PuzzleReq{
   WidthRect: number;
   HeightRect: number;
 }
+
