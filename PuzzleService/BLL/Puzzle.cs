@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace PuzzleService.BLL
@@ -74,6 +75,16 @@ namespace PuzzleService.BLL
             }
 
             return image;
+        }
+
+        public string ConvertFromImageToBase64(Image bitMap)
+        {
+            MemoryStream ms = new MemoryStream();
+            bitMap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            byte[] byteImage = ms.ToArray();
+           
+            string img = Convert.ToBase64String(byteImage);
+            return img;
         }
     }
 }

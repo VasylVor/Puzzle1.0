@@ -7,8 +7,9 @@
 <div class="content" role="main">
   <input type="file" (change)="OnFileSelected($event)" /> 
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
-  <div *ngFor="let leg of resp.ImageLst; let i = index">
-    <img [src]="this.resp.ImageLst[i] | async" />
+  <div *ngFor="let leg of puzzleImg; let i = index">
+    <!--<img [src]="puzzleImg.imageLst[i]" />-->
+    <p>{{puzzleImg.Id}}</p>
  </div>
 </div>
 

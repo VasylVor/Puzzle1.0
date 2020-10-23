@@ -1,6 +1,7 @@
 export class PuzzleResp{
-  Id: number;
-  Name: string;
-  Images: [];
-  Error: number;
+  id: number;
+  name: string;
+  imageLst: [];
+  code: number;
+
 }

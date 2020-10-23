@@ -13,29 +13,14 @@ import { PuzzleResp } from './Service/PuzzleResp';
 
 export class AppComponent 
 {
-  postData = {
-    test: 'My content',
-  }
-  
-  url = 'http://localhost:52871/api/getpuzzle';
- /* data{
-    image: base64_
-  }*/
-
-  selectedFile = null;
   imageError: string;
   isImageSaved: boolean;
   cardImageBase64: string;
-  ImageName: string;
-  imageslst = PuzzleResp;
-  lst:[];
-  /*constructor(private http: HttpClient){
-    
-  }*/
+  puzzleImg: PuzzleResp;
+  imageName: string;
+
   constructor(private httpService: PuzzleServ){}
-/*  OnFileSelected(event){
-    this.cardImageBase64 = event.target.file[0];
-  }*/
+
   OnFileSelected(fileInput: any) {
     this.imageError = null;
     if (fileInput.target.files && fileInput.target.files[0]) {
@@ -48,7 +33,6 @@ export class AppComponent
         if (fileInput.target.files[0].size > max_size) {
             this.imageError =
                 'Maximum size allowed is ' + max_size / 1000 + 'Mb';
-
             return false;
         }
 
@@ -56,14 +40,11 @@ export class AppComponent
             this.imageError = 'Only Images are allowed ( JPG | PNG )';
             return false;
         }
-
-        this.ImageName = fileInput.target.files[0].name;
-
         const reader = new FileReader();
         reader.onload = (e: any) => {
             const image = new Image();
             image.src = e.target.result;
-
+            this.imageName = e.target.result.name;
             image.onload = rs => {
                 const img_height = rs.currentTarget['height'];
                 const img_width = rs.currentTarget['width'];
@@ -100,26 +81,13 @@ export class AppComponent
       Id:1,
       BImage: this.cardImageBase64,
       HeightRect:200,
-      WidthRect:200
+      WidthRect:200,
+      NameImage: this.imageName
     };
 
-    /*const fd = new FormData();
-    if(this.selectedFile==null)
-    {
-      alert("Please select file");
-    }
-    else
-    {     
-     
-    } */ 
-
-    var resp = this.httpService.GetPuzzle(fileUplodVM).subscribe();
+    this.puzzleImg = this.httpService.GetPuzzle(fileUplodVM);
+    console.log(this.puzzleImg.name);
     
-    /*fd.append('image', this.selectedFile,this.selectedFile.name);*/
-    /*this.http.post(this.url,fileUplodVM).toPromise().then(data =>
-    {
-      console.log(data);
-    })*/
   }; 
 }
 
