@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PuzzleService.BLL;
 using PuzzleService.BLL.Services;
-using PuzzleService.Model;
+using PuzzleService.ProxyClasses;
 
 namespace PuzzleService.Controllers
 {
@@ -46,7 +46,7 @@ namespace PuzzleService.Controllers
                 PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage };
                 return Ok(resp);
             }
-            catch (Exception)
+            catch (Exception  e)
             {
                 return  this.StatusCode((int)HttpStatusCode.Conflict);
             }

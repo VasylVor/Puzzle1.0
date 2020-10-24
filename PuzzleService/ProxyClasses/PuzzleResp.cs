@@ -6,7 +6,7 @@ using System.Net;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
-namespace PuzzleService.Model
+namespace PuzzleService.ProxyClasses
 {
     [DataContract]
     public class PuzzleResp

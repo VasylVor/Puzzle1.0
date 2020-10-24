@@ -1,4 +1,6 @@
 ﻿using PuzzleService.BLL.Services;
+using PuzzleService.DAL;
+using PuzzleService.Models;
 using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ namespace PuzzleService.BLL
         /// <param name="hRect"></param>
         /// <param name="wRect"></param>
         /// <returns></returns>
-        public  Bitmap[,] GetPuzzle(Image image, int hRect, int wRect)
+        public  Bitmap[,] GetPuzzle(System.Drawing.Image image, int hRect, int wRect)
         {
             int width = image.Width / wRect;
             int height = image.Height / hRect;
@@ -63,21 +65,24 @@ namespace PuzzleService.BLL
             return bitmaps;
         }
 
-        public  Image ConvertFromBase64ToImage(string bimage)
+        public System.Drawing.Image ConvertFromBase64ToImage(string bimage)
         {
+            PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
+            rp.SaveImage("test", bimage);
+
             int index = bimage.IndexOf(',') + 1;
             var bytes = Convert.FromBase64String(bimage.Remove(0, index));
 
-            Image image;
+            System.Drawing.Image image;
             using (MemoryStream ms = new MemoryStream(bytes))
             {
-                image = Image.FromStream(ms);
+                image = System.Drawing.Image.FromStream(ms);
             }
 
             return image;
         }
 
-        public string ConvertFromImageToBase64(Image bitMap)
+        public string ConvertFromImageToBase64(System.Drawing.Image bitMap)
         {
             MemoryStream ms = new MemoryStream();
             bitMap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
