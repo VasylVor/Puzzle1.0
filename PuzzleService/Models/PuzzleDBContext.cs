@@ -8,6 +8,7 @@ namespace PuzzleService.Models
     {
         public PuzzleDBContext()
         {
+ 
         }
 
         public PuzzleDBContext(DbContextOptions<PuzzleDBContext> options)
@@ -61,7 +62,7 @@ namespace PuzzleService.Models
 
             modelBuilder.Entity<PuzzleError>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Created)
                     .HasColumnType("datetime")

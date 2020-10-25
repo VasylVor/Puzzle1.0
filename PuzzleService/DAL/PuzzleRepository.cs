@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using PuzzleService.Models;
 using System;
 using System.Collections.Generic;
@@ -17,23 +18,47 @@ namespace PuzzleService.DAL
         }
         public void SaveImage(string name, string image)
         {
-            using (var transaction = context.Database.BeginTransaction())
-            {
+            //using (var transaction = context.Database.BeginTransaction())
+            //{
                 try
                 {
-                    context.Image.Add(new Image()
-                    {
-                        Image1 = image,
-                        Name = name
-                    });
-                    context.SaveChanges();
-                    transaction.Commit();
-                }
-                catch (Exception)
+                throw new Exception();
+                var paramLst = new List<SqlParameter>()
                 {
-                    transaction.Rollback();
+                    new SqlParameter("@Image", image),
+                    new SqlParameter("@Name", name),
+                    new SqlParameter()
+                    {
+                        ParameterName = "@Id", DbType = System.Data.DbType.Int32,
+                        Direction = System.Data.ParameterDirection.Output
+                    }
+                };
+                context.Database.ExecuteSqlRaw("Exec dbo.SaveImages @Name, @Image, @id", paramLst.ToArray());
+                context.SaveChanges();
+                
+                    //transaction.Commit();
                 }
-            }
+                catch (Exception e)
+                {
+                //transaction.Rollback();
+                SaveError(e.Message, e.Source, e.StackTrace);
+                }
+            //}
         }
+
+        public void SaveError(string message, string methodName,string stackTrace)
+        {
+
+            context.PuzzleError.Add(new PuzzleError()
+            {
+                Message = message,
+                MethodName = methodName,
+                StackTrace = stackTrace
+            });
+
+            context.SaveChanges();
+        }
+
+
     }
 }

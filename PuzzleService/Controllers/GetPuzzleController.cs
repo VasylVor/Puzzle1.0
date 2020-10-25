@@ -27,7 +27,7 @@ namespace PuzzleService.Controllers
             //Image img = Image.FromFile(@"D:\My projects\Puzzle\PuzzleWF\Image\brain.jpg"); ;// берем картинку или Image.FromFile("D:\\123.png");
             try
             {
-                Image img = puzzle.ConvertFromBase64ToImage(request.BImage);
+                Image img = puzzle.ConvertFromBase64ToImage(request.BImage, request.NameImage);
                 Bitmap[,] bmp = puzzle.GetPuzzle(img, 100, 100);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
                 Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
                 List<string> lstImage = new List<string>();
