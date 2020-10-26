@@ -5,12 +5,34 @@
 </div>
 {{imageError}}
 <div class="content" role="main">
-  <input type="file" (change)="OnFileSelected($event)" /> 
+ <input type="file" (change)="OnFileSelected($event)" /> 
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
-  <div *ngFor="let leg of puzzleImg; let i = index">
-    <!--<img [src]="puzzleImg.imageLst[i]" />-->
-    <p>{{puzzleImg.Id}}</p>
- </div>
+ <!--  <p>{{puzzleImg.name}}</p>
+  <img [src]={{puzzleImg.imageLst[1]}} />-->
+  
 </div>
+
+<table width="100%" class="responsive-table table-striped table-bordered table-hover">  
+  <thead>  
+      <tr class="btn-primary" style="height: 40px;">  
+          <th style="width:10%;">  
+              <b>User Name</b>  
+          </th>  
+          <th style="width:15%;">  
+              <b>File</b>  
+          </th>  
+          <th style="width:20%;">  
+              <b>Image</b>  
+          </th>  
+      </tr>  
+  </thead>  
+  <tbody>  
+      <tr *ngFor="let item of puzzleImg.imageLst">  
+          <td>  
+            <img [src]="item" height="60" width="60">    
+          </td>  
+        </tr>  
+      </tbody>  
+  </table>  
 
 <!--<router-outlet></router-outlet>  (change)="OnFileSelected($event)" -->

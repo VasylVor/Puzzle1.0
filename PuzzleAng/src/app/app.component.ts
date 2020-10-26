@@ -41,10 +41,11 @@ export class AppComponent
             return false;
         }
         const reader = new FileReader();
+        this.imageName = fileInput.target.files[0].name;
         reader.onload = (e: any) => {
             const image = new Image();
             image.src = e.target.result;
-            this.imageName = e.target.result.name;
+            
             image.onload = rs => {
                 const img_height = rs.currentTarget['height'];
                 const img_width = rs.currentTarget['width'];
@@ -86,7 +87,6 @@ export class AppComponent
     };
 
     this.puzzleImg = this.httpService.GetPuzzle(fileUplodVM);
-    console.log(this.puzzleImg.name);
     
   }; 
 }

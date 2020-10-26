@@ -12,7 +12,7 @@ export class PuzzleServ{
     resp: any;
 
     GetPuzzle(puzzleReq: PuzzleReq){
-        const req = {id: puzzleReq.Id, heightR: puzzleReq.HeightRect, weidth: puzzleReq.WidthRect, BImage: puzzleReq.BImage};
+        const req = {id: puzzleReq.Id, heightR: puzzleReq.HeightRect, weidth: puzzleReq.WidthRect, BImage: puzzleReq.BImage, NameImage: puzzleReq.NameImage};
        // resp = this.http.post(this.url ,req);
        this.http.post(this.url ,req).subscribe((response) =>{ this.resp = response;})
         return this.resp; 

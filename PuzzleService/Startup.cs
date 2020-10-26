@@ -11,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PuzzleService.BLL;
 using PuzzleService.BLL.Services;
+using PuzzleService.DAL;
+using PuzzleService.Models;
 
 namespace PuzzleService
 {
@@ -27,7 +29,8 @@ namespace PuzzleService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<IPuzzle, Puzzle>();
+            services.AddTransient<IPuzzle, BLL.Puzzle>();
+           // services.AddTransient<PuzzleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

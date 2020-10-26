@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PuzzleService.BLL;
 using PuzzleService.BLL.Services;
-using PuzzleService.Model;
+using PuzzleService.ProxyClasses;
 
 namespace PuzzleService.Controllers
 {
@@ -27,7 +27,7 @@ namespace PuzzleService.Controllers
             //Image img = Image.FromFile(@"D:\My projects\Puzzle\PuzzleWF\Image\brain.jpg"); ;// берем картинку или Image.FromFile("D:\\123.png");
             try
             {
-                Image img = puzzle.ConvertFromBase64ToImage(request.BImage);
+                Image img = puzzle.ConvertFromBase64ToImage(request.BImage, request.NameImage);
                 Bitmap[,] bmp = puzzle.GetPuzzle(img, 100, 100);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
                 Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
                 List<string> lstImage = new List<string>();
@@ -46,7 +46,7 @@ namespace PuzzleService.Controllers
                 PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage };
                 return Ok(resp);
             }
-            catch (Exception)
+            catch (Exception  e)
             {
                 return  this.StatusCode((int)HttpStatusCode.Conflict);
             }
