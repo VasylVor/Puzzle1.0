@@ -1,8 +1,10 @@
 {
   "version": 2,
   "dgSpecHash": "6B9YLOxxNoH8qIMu0iagW1iAY8GawTQdpFS9g4/7bUs/cJfJ9rWIyxLiw2gsiBMgtmEh/RNJdiRoz3L/+t1cJQ==",
+  "dgSpecHash": "ddpWpywbbYLLV3tYdWmnljRId4PbxIC2bZ0Z4DRolkaD1vbaB0/z03CTjFOpf2/UfAd/8mHJVcut/u5eFBg7SA==",
   "success": true,
   "projectFilePath": "D:\\VVoronin_New\\Puzzle1.0\\PuzzleService\\PuzzleService.csproj",
+  "projectFilePath": "D:\\My projects\\Puzzle\\PuzzleService\\PuzzleService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vvoronin4035\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\vvoronin4035\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
