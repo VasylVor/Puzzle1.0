@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PuzzleService.BLL;
 using PuzzleService.BLL.Services;
+using PuzzleService.DAL;
+using PuzzleService.Models;
 using PuzzleService.ProxyClasses;
 
 namespace PuzzleService.Controllers
@@ -27,12 +29,15 @@ namespace PuzzleService.Controllers
             //Image img = Image.FromFile(@"D:\My projects\Puzzle\PuzzleWF\Image\brain.jpg"); ;// берем картинку или Image.FromFile("D:\\123.png");
             try
             {
-                Image img = puzzle.ConvertFromBase64ToImage(request.BImage, request.NameImage);
+                PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext(), puzzle);
+                int idImage = rp.SaveImage(request.BImage, request.NameImage); // save image
+                
+                System.Drawing.Image img = puzzle.ConvertFromBase64ToImage(request.BImage); // concert image
                 Bitmap[,] bmp = puzzle.GetPuzzle(img, 100, 100);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
+                rp.SavePuzzle(idImage, bmp);
+
                 Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
                 List<string> lstImage = new List<string>();
-                var a = rndBmp.GetLength(0);
-                var b = rndBmp.GetLength(1);
 
                 for (int i = 0; i < rndBmp.GetLength(0); i++)
                 {
@@ -42,6 +47,7 @@ namespace PuzzleService.Controllers
                         lstImage.Add(imgPuz);
                     }
                 }
+
 
                 PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage };
                 return Ok(resp);

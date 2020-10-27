@@ -9,6 +9,7 @@ namespace PuzzleService.Models
         public string MethodName { get; set; }
         public string Message { get; set; }
         public string StackTrace { get; set; }
+        public string InnerExceprion { get; set; }
         public DateTime? Created { get; set; }
     }
 }
