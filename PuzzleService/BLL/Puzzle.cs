@@ -65,12 +65,10 @@ namespace PuzzleService.BLL
             return bitmaps;
         }
 
-        public System.Drawing.Image ConvertFromBase64ToImage(string bimage, string name)
+        public System.Drawing.Image ConvertFromBase64ToImage(string bimage)
         {
-            PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
-           
             int index = bimage.IndexOf(',') + 1;
-            //int id = rp.SaveImage(name, bimage);
+           
             var bytes = Convert.FromBase64String(bimage.Remove(0, index));
 
             System.Drawing.Image image;

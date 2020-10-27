@@ -191,6 +191,7 @@ D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\ru\Microsoft.Cod
 D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\VVoronin_New\Puzzle1.0\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.csprojAssemblyReference.cache
 D:\VVoronin_New\Puzzle1.0\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.csproj.CoreCompileInputs.cache
 D:\VVoronin_New\Puzzle1.0\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.MvcApplicationPartsAssemblyInfo.cache
 D:\VVoronin_New\Puzzle1.0\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.AssemblyInfoInputs.cache
@@ -318,43 +319,3 @@ D:\My projects\Puzzle\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.EntityFram
 D:\My projects\Puzzle\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.csproj.CoreCompileInputs.cache
 D:\My projects\Puzzle\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.MvcApplicationPartsAssemblyInfo.cache
 D:\My projects\Puzzle\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.csprojAssemblyReference.cache
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\VVoronin_New\Puzzle1.0\PuzzleService\obj\Debug\netcoreapp3.1\PuzzleService.csprojAssemblyReference.cache
