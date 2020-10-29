@@ -7,10 +7,13 @@
 <div class="content" role="main">
   <input type="file" (change)="OnFileSelected($event)" /> 
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
-  <div *ngFor="let leg of puzzleImg; let i = index">
-    <!--<img [src]="puzzleImg.imageLst[i]" />-->
-    <p>{{puzzleImg.Id}}</p>
- </div>
+  <h1>{{ puzzleImg.id }}</h1>
+<img src="{{img}}" alt="Selected Image" height="200" width="200">
+
+<!--  <div *ngFor="let leg of puzzleImg.imageLst;">
+    
+    
+ </div>-->
 </div>
 
 <!--<router-outlet></router-outlet>  (change)="OnFileSelected($event)" -->
