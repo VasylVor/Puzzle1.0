@@ -31,10 +31,11 @@ namespace PuzzleService.Controllers
             {
                 PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext(), puzzle);
                 int idImage = rp.SaveImage(request.BImage, request.NameImage); // save image
-                
-                System.Drawing.Image img = puzzle.ConvertFromBase64ToImage(request.BImage); // concert image
+                string imgType;
+
+                System.Drawing.Image img = puzzle.ConvertFromBase64ToImage(request.BImage,out imgType); // concert image
                 Bitmap[,] bmp = puzzle.GetPuzzle(img, 100, 100);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
-                rp.SavePuzzle(idImage, bmp);
+                rp.SavePuzzle(idImage, bmp, imgType);
 
                 Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
                 List<string> lstImage = new List<string>();
@@ -44,12 +45,11 @@ namespace PuzzleService.Controllers
                     for (int j = 0; j < rndBmp.GetLength(1); j++)
                     {
                         string imgPuz = puzzle.ConvertFromImageToBase64(rndBmp[i, j]);
-                        lstImage.Add(imgPuz);
+                        lstImage.Add(imgType + imgPuz);
                     }
                 }
 
-
-                PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage };
+                PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage, Column = rndBmp.GetLength(0), Row = rndBmp.GetLength(1)};
                 return Ok(resp);
             }
             catch (Exception  e)

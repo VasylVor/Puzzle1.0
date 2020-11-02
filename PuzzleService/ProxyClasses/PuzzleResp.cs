@@ -17,7 +17,12 @@ namespace PuzzleService.ProxyClasses
         public string Name { get; set; }
         [DataMember]
         public List<string> ImageLst { get; set; }
+        [DataMember]
+        public int Column { get; set; }
+        [DataMember]
+        public int Row { get; set; }
 
+        [DataMember]
         public HttpStatusCode Code { get; set; }
     }
 }

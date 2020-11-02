@@ -10,7 +10,7 @@ namespace PuzzleService.BLL.Services
     {
         Bitmap[,] GetPuzzle(Image image, int hRect, int wRect);
         Bitmap[,] MixPuzzle(Bitmap[,] bitmaps);
-        Image ConvertFromBase64ToImage(string bimage);
+        Image ConvertFromBase64ToImage(string bimage, out string imgType);
         string ConvertFromImageToBase64(Image bitMap);
     }
 }

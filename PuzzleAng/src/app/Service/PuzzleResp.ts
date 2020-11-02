@@ -1,7 +1,8 @@
 export class PuzzleResp{
   id: number;
   name: string;
-  imageLst: [];
+  imageLst =  Array;
   code: number;
-
+  row: number;
+  column: number;
 }

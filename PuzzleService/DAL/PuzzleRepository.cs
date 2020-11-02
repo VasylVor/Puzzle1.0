@@ -69,7 +69,7 @@ namespace PuzzleService.DAL
             context.SaveChanges();
         }
 
-        public void SavePuzzle(int idImage, Bitmap[,] puzzle)
+        public void SavePuzzle(int idImage, Bitmap[,] puzzle, string imgType)
         {
             using (var transaction = context.Database.BeginTransaction())
             {
@@ -81,7 +81,7 @@ namespace PuzzleService.DAL
                             var paramLst = new List<SqlParameter>()
                             {
                                 new SqlParameter("@IdImage", idImage),
-                                new SqlParameter("@Puzzle", puz.ConvertFromImageToBase64(puzzle[i,j]))
+                                new SqlParameter("@Puzzle", imgType + puz.ConvertFromImageToBase64(puzzle[i,j]))
                             };
                             context.Database.ExecuteSqlRaw("Exec dbo.SavePuzzle @IdImage, @Puzzle ", paramLst.ToArray());
                         }

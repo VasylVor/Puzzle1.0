@@ -1,4 +1,4 @@
-
+td
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
 
@@ -7,13 +7,32 @@
 <div class="content" role="main">
   <input type="file" (change)="OnFileSelected($event)" /> 
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
-  <h1>{{ puzzleImg.id }}</h1>
-<img src="{{img}}" alt="Selected Image" height="200" width="200">
+ 
 
-<!--  <div *ngFor="let leg of puzzleImg.imageLst;">
-    
-    
- </div>-->
+    <table>
+      <p >
+        <tr *ngFor="let a of arr(puzzleImg.column);">
+          <td *ngFor="let img of puzzleImg.imageLst; let i = index" >
+            <p *ngIf="i %  (puzzleImg.row - 1) else newrow">
+              <img [src]="img" alt="Selected Image" height="200" width="200">
+            </p>
+            <p #newrow>
+              <img [src]="img" alt="Selected Image" height="200" width="200">
+            </p>
+          </td>
+        </tr>
+      </p>
+    </table>
+
+    <!--<table>
+      <tr *ngFor="let j of arr(5)">
+        <td *ngFor="let j of arr(5)">
+          a
+        </td>
+      </tr>
+    </table>
+  *ngFor="let a of arr(puzzleImg.column);"
+  *ngFor="let img of puzzleImg.imageLst;"
+  -->
 </div>
 
-<!--<router-outlet></router-outlet>  (change)="OnFileSelected($event)" -->
