@@ -11,15 +11,20 @@ td
 
     <table>
       <p >
-        <tr *ngFor="let a of arr(puzzleImg.column);">
-          <td *ngFor="let img of puzzleImg.imageLst; let i = index" >
+        <tr *ngFor="let a of arr(puzzleImg.column); let i = index">
+          <td *ngFor="let row of arr(puzzleImg.column); let j = index">
+            <img [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
+            
+          </td>
+          <!--{{i *  puzzleImg.column + j}}
+            <td *ngFor="let img of puzzleImg.imageLst; let i = index" >
             <p *ngIf="i %  (puzzleImg.row - 1) else newrow">
               <img [src]="img" alt="Selected Image" height="200" width="200">
             </p>
             <p #newrow>
               <img [src]="img" alt="Selected Image" height="200" width="200">
             </p>
-          </td>
+          </td>-->
         </tr>
       </p>
     </table>
