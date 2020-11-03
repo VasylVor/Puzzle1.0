@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { PuzzleServ } from './Service/PuzzleService';
 import { PuzzleReq } from './Service/PuzzleReq';
 import { PuzzleResp } from './Service/PuzzleResp';
-
+import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -93,7 +93,16 @@ export class AppComponent
     {
       this.puzzleLst.push[item];
     }*/
-  }; 
+  };
+
+  drop(event: CdkDragDrop<any>){
+    if(event.previousContainer === event.container){
+      moveItemInArray(event.container.data,event.previousIndex, event.currentIndex);
+    } else{
+      transferArrayItem(event.previousContainer.data, event.container.data,event.previousIndex,event.currentIndex);
+    }
+  }
+  
 }
 
 
