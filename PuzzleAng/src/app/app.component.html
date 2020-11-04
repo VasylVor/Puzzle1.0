@@ -9,18 +9,23 @@ td
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
  
 
-  <!--  <table>
+    <table>
       <p >
         <tr *ngFor="let a of arr(puzzleImg.row); let i = index">
           <td *ngFor="let row of arr(puzzleImg.column); let j = index">
-            <img [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
+            <cdk-drop (dropped)="drop($event)" [connectedTo]="drops">
+              <img cdkDrag [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
+            </cdk-drop>
+           <!-- <div cdkDropList (cdkDropListDropped)="drop($event)">
+              <img cdkDrag [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
+            </div>-->
             
           </td>
         </tr>
       </p>
-    </table>-->
+    </table>
 
-    <table mat-table [dataSource] = "puzzleImg.imageLst" class="mat-elevation-z8">
+   <!-- <table mat-table [dataSource] = "puzzleImg.imageLst" class="mat-elevation-z8">
         <ng-container  cdkDropListGroup>
           <td mat-call *matCellDef="let element">
 
@@ -28,6 +33,6 @@ td
         </ng-container>
 
         <tr mat-row *matRowDef="columns: arr(puzzleImg.column)"></tr>
-    </table>
+    </table>-->
 </div>
 
