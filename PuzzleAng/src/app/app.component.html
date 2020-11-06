@@ -10,19 +10,23 @@ td
  
 
     <table>
-      <p >
+      <thead>
+
+      </thead>
+      <tbody cdkDropList   [cdkDropListData]="puzzleImg.imageLst"
+      (cdkDropListDropped)="drop($event)">
         <tr *ngFor="let a of arr(puzzleImg.row); let i = index">
-          <td *ngFor="let row of arr(puzzleImg.column); let j = index">
-            <cdk-drop (dropped)="drop($event)" [connectedTo]="drops">
+          <td *ngFor="let row of arr(puzzleImg.column); let j = index" cdkDrag>
+            <!--<cdk-drop (dropped)="drop($event)" [connectedTo]="drops">
               <img cdkDrag [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
-            </cdk-drop>
-           <!-- <div cdkDropList (cdkDropListDropped)="drop($event)">
-              <img cdkDrag [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
-            </div>-->
+            </cdk-drop>-->
+            <div>
+              <img [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="150" width="250">
+            </div>
             
           </td>
         </tr>
-      </p>
+      </tbody>
     </table>
 
    <!-- <table mat-table [dataSource] = "puzzleImg.imageLst" class="mat-elevation-z8">

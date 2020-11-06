@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { PuzzleServ } from './Service/PuzzleService';
 import { PuzzleReq } from './Service/PuzzleReq';
 import { PuzzleResp } from './Service/PuzzleResp';
-import {CdkDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -21,7 +21,6 @@ export class AppComponent
   imageName: string;
   puzzleLst = Array;
   arr= Array;
-  drops: CdkDrop[] = [];
 
   constructor(private httpService: PuzzleServ){}
 
@@ -105,8 +104,9 @@ export class AppComponent
     }
   }*/
 
-  drop(event: any){
-    moveItemInArray(this.puzzleImg.imageLst,event.previousIndex,event.currentIndex);
+  drop(event: CdkDragDrop<any>){
+    console.log(1);
+    moveItemInArray(this.puzzleImg.imageLst,event.previousIndex - 1,event.currentIndex - 1);
   }
   
 }
