@@ -13,15 +13,15 @@ td
       <thead>
 
       </thead>
-      <tbody cdkDropList   [cdkDropListData]="puzzleImg.imageLst"
-      (cdkDropListDropped)="drop($event)">
-        <tr *ngFor="let a of arr(puzzleImg.row); let i = index">
-          <td *ngFor="let row of arr(puzzleImg.column); let j = index" cdkDrag>
+      <tbody>
+        <tr *ngFor="let a of arr(puzzleImg.column); let i = index">
+          <td *ngFor="let row of arr(puzzleImg.row); let j = index" >
             <!--<cdk-drop (dropped)="drop($event)" [connectedTo]="drops">
               <img cdkDrag [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
-            </cdk-drop>-->
-            <div>
-              <img [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="150" width="250">
+            </cdk-drop>   cdkDropList   [cdkDropListData]="puzzleImg.imageLst"
+      (cdkDropListDropped)="drop($event)"  cdkDrag-->
+            <div class="imgBox">
+              <img  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" alt="Selected Image" height="150" width="250" (click)="this.myfunction(i,j)">
             </div>
             
           </td>
@@ -29,14 +29,10 @@ td
       </tbody>
     </table>
 
-   <!-- <table mat-table [dataSource] = "puzzleImg.imageLst" class="mat-elevation-z8">
-        <ng-container  cdkDropListGroup>
-          <td mat-call *matCellDef="let element">
 
-          </td>
-        </ng-container>
+    <img [src]="image1" alt="Selected Image" height="150" width="250">
 
-        <tr mat-row *matRowDef="columns: arr(puzzleImg.column)"></tr>
-    </table>-->
+    <img [src]="image2" alt="Selected Image" height="150" width="250">
+
 </div>
 

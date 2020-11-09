@@ -35,21 +35,30 @@ namespace PuzzleService.Controllers
 
                 System.Drawing.Image img = puzzle.ConvertFromBase64ToImage(request.BImage,out imgType); // concert image
                 Bitmap[,] bmp = puzzle.GetPuzzle(img, 100, 100);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
-                rp.SavePuzzle(idImage, bmp, imgType);
-
-                Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
                 List<string> lstImage = new List<string>();
-
-                for (int i = 0; i < rndBmp.GetLength(0); i++)
+                for (int i = 0; i < bmp.GetLength(0); i++)
                 {
-                    for (int j = 0; j < rndBmp.GetLength(1); j++)
+                    for (int j = 0; j < bmp.GetLength(1); j++)
                     {
-                        string imgPuz = puzzle.ConvertFromImageToBase64(rndBmp[i, j]);
+                        string imgPuz = puzzle.ConvertFromImageToBase64(bmp[i, j]);
                         lstImage.Add(imgType + imgPuz);
                     }
                 }
+                //rp.SavePuzzle(idImage, bmp, imgType);
 
-                PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage, Column = rndBmp.GetLength(0), Row = rndBmp.GetLength(1)};
+                //Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
+                //List<string> lstImage = new List<string>();
+
+                //for (int i = 0; i < rndBmp.GetLength(0); i++)
+                //{
+                //    for (int j = 0; j < rndBmp.GetLength(1); j++)
+                //    {
+                //        string imgPuz = puzzle.ConvertFromImageToBase64(rndBmp[i, j]);
+                //        lstImage.Add(imgType + imgPuz);
+                //    }
+                //}
+
+                PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage, Column = bmp.GetLength(0), Row = bmp.GetLength(1)};
                 return Ok(resp);
             }
             catch (Exception  e)

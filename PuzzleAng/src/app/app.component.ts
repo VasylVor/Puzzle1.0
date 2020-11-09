@@ -21,6 +21,8 @@ export class AppComponent
   imageName: string;
   puzzleLst = Array;
   arr= Array;
+  image1: string;
+  image2: string;
 
   constructor(private httpService: PuzzleServ){}
 
@@ -105,10 +107,43 @@ export class AppComponent
   }*/
 
   drop(event: CdkDragDrop<any>){
-    console.log(1);
-    moveItemInArray(this.puzzleImg.imageLst,event.previousIndex - 1,event.currentIndex - 1);
+    moveItemInArray(this.puzzleImg.imageLst,event.previousIndex, event.currentIndex);
+    this.image1  = this.puzzleImg.imageLst[event.previousIndex];
+    this.image2  = this.puzzleImg.imageLst[event.currentIndex];
+
+    /*this.puzzleImg.imageLst[event.previousIndex] = this.image2;
+    this.puzzleImg.imageLst[event.currentIndex] = this.image1;*/
   }
-  
+
+  flag: boolean = false;
+  coord: number;
+  iY:number;
+  public myfunction(i : number, j : number){
+    if(this.flag == false){
+      this.image1 = this.puzzleImg.imageLst[i *  this.puzzleImg.row + j];
+      this.image2 = null;
+      this.coord = i *  this.puzzleImg.row + j;
+      this.iY = j;
+      this.flag = true;
+    }
+    else{
+      this.image2 = this.puzzleImg.imageLst[i *  this.puzzleImg.row + j];
+      this.puzzleImg.imageLst[this.coord] = this.image2;
+      this.puzzleImg.imageLst[i *  this.puzzleImg.row + j] = this.image1;
+      this.flag = false;
+      this.iX = null;
+      this.iY = null;
+      /*this.refreshData();*/
+    }
+  }
+
+  refreshData(){
+    this.flag = false;
+    this.image1 = null;
+    this.image2 = null;
+    this.iX = null;
+    this.iY = null;
+  }
 }
 
 
