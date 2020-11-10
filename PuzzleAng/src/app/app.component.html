@@ -16,21 +16,16 @@ td
       <tbody>
         <tr *ngFor="let a of arr(puzzleImg.column); let i = index">
           <td *ngFor="let row of arr(puzzleImg.row); let j = index" >
-            <!--<cdk-drop (dropped)="drop($event)" [connectedTo]="drops">
-              <img cdkDrag [src]="puzzleImg.imageLst[i *  puzzleImg.column + j]" alt="Selected Image" height="50" width="50">
-            </cdk-drop>   cdkDropList   [cdkDropListData]="puzzleImg.imageLst"
-      (cdkDropListDropped)="drop($event)"  cdkDrag-->
-            <div class="imgBox">
+            <div class="imgBox" [ngClass]="{'checkImageBox': IsCheckImageBox}">
               <img  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" alt="Selected Image" height="150" width="250" (click)="this.myfunction(i,j)">
             </div>
-            
           </td>
         </tr>
       </tbody>
     </table>
 
 
-    <img [src]="image1" alt="Selected Image" height="150" width="250">
+    <img [src]="image1" class="checkImageBox" alt="Selected Image" height="150" width="250">
 
     <img [src]="image2" alt="Selected Image" height="150" width="250">
 

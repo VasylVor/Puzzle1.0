@@ -118,6 +118,7 @@ export class AppComponent
   flag: boolean = false;
   coord: number;
   iY:number;
+  IsCheckImageBox: boolean;
   public myfunction(i : number, j : number){
     if(this.flag == false){
       this.image1 = this.puzzleImg.imageLst[i *  this.puzzleImg.row + j];
@@ -125,24 +126,17 @@ export class AppComponent
       this.coord = i *  this.puzzleImg.row + j;
       this.iY = j;
       this.flag = true;
+      this.IsCheckImageBox = true;
     }
     else{
       this.image2 = this.puzzleImg.imageLst[i *  this.puzzleImg.row + j];
       this.puzzleImg.imageLst[this.coord] = this.image2;
       this.puzzleImg.imageLst[i *  this.puzzleImg.row + j] = this.image1;
       this.flag = false;
-      this.iX = null;
       this.iY = null;
+      this.IsCheckImageBox = false;
       /*this.refreshData();*/
     }
-  }
-
-  refreshData(){
-    this.flag = false;
-    this.image1 = null;
-    this.image2 = null;
-    this.iX = null;
-    this.iY = null;
   }
 }
 
