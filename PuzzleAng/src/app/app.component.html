@@ -1,10 +1,10 @@
-td
-<!-- Toolbar -->
+<!-- Toolbar
 <div class="toolbar" role="banner">
 
 </div>
-{{imageError}}
-<div class="content" role="main">
+ -->
+
+<!--6609-po[<div class="content" role="main">
   <input type="file" (change)="OnFileSelected($event)" /> 
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
  
@@ -16,8 +16,8 @@ td
       <tbody>
         <tr *ngFor="let a of arr(puzzleImg.column); let i = index">
           <td *ngFor="let row of arr(puzzleImg.row); let j = index" >
-            <div class="imgBox" [ngClass]="{'checkImageBox': IsCheckImageBox}">
-              <img  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" alt="Selected Image" height="150" width="250" (click)="this.myfunction(i,j)">
+            <div>
+              <img id="puzz_{{i *  puzzleImg.row + j}}"  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" alt="Selected Image" height="150" width="250"  (click)="this.changeIPuzzle(i *  puzzleImg.row + j)" >
             </div>
           </td>
         </tr>
@@ -30,4 +30,7 @@ td
     <img [src]="image2" alt="Selected Image" height="150" width="250">
 
 </div>
-
+-->
+<div style="height: 250px;">
+<app-start-page></app-start-page>
+</div>

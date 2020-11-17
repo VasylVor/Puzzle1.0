@@ -61,7 +61,7 @@ namespace PuzzleService.Controllers
                 PuzzleResp resp = new PuzzleResp() { Id = 1, ImageLst = lstImage, Name = request.NameImage, Column = bmp.GetLength(0), Row = bmp.GetLength(1)};
                 return Ok(resp);
             }
-            catch (Exception  e)
+            catch (Exception \o8i7u90e)
             {
                 return  this.StatusCode((int)HttpStatusCode.Conflict);
             }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { PuzzleServ } from './Service/PuzzleService';
 import { PuzzleReq } from './Service/PuzzleReq';
 import { PuzzleResp } from './Service/PuzzleResp';
+import {StartPageComponent} from './start-page/start-page.component';
 import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
 
 
@@ -116,26 +117,40 @@ export class AppComponent
   }
 
   flag: boolean = false;
-  coord: number;
+  firstIndex: number;
   iY:number;
   IsCheckImageBox: boolean;
-  public myfunction(i : number, j : number){
+  activeImg: string; 
+  statusClass = 'not-active';
+
+
+
+  public changeIPuzzle(index: number){
     if(this.flag == false){
-      this.image1 = this.puzzleImg.imageLst[i *  this.puzzleImg.row + j];
+      this.image1 = this.puzzleImg.imageLst[index];
       this.image2 = null;
-      this.coord = i *  this.puzzleImg.row + j;
-      this.iY = j;
+      this.firstIndex = index;
       this.flag = true;
-      this.IsCheckImageBox = true;
+
+
     }
     else{
-      this.image2 = this.puzzleImg.imageLst[i *  this.puzzleImg.row + j];
-      this.puzzleImg.imageLst[this.coord] = this.image2;
-      this.puzzleImg.imageLst[i *  this.puzzleImg.row + j] = this.image1;
+      this.image2 = this.puzzleImg.imageLst[index];
+      this.puzzleImg.imageLst[this.firstIndex] = this.image2;
+      this.puzzleImg.imageLst[index] = this.image1;
       this.flag = false;
-      this.iY = null;
-      this.IsCheckImageBox = false;
-      /*this.refreshData();*/
+    }
+
+    this.ChangeStyleImg(this.flag,this.firstIndex);
+  }
+
+  private ChangeStyleImg(flag: boolean, index: number){
+    if(flag == true){
+      (<HTMLImageElement>document.getElementById('puzz_' + index)).style.border = '4px solid transparent';
+      (<HTMLImageElement>document.getElementById('puzz_' + index)).style.borderColor = 'green';
+    }
+    else{
+      (<HTMLImageElement>document.getElementById('puzz_' + index)).style.borderColor = 'white';
     }
   }
 }

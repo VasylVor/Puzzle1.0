@@ -1,0 +1,50 @@
+h1{
+    font-family: fanix;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 200px;
+    font-weight: bold;
+    color: transparent;
+    background-image: url("https://media.giphy.com/media/1Su0BeFy6fXXGa977m/giphy.gif");
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.logo{
+    font-weight: 1000px;
+}
+
+a{
+    position: relative;
+    padding: 20px 40px;
+    background: #058d9e;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 4px;
+    transform-style: preserve-3d;
+    transition: ease-in-out 2s;
+    border-radius: 60px;
+}
+
+a:hover{
+    transform: rotateX(360deg);
+}
+a span{
+    display: block;
+    font-weight: bold;
+    transform-style: preserve-3d;
+    transform: perspective(100px) translateZ(20px);
+}
+
+a:before{
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    right: 6px;
+    bottom: 4px;
+    border: 2px solid #fff;
+}

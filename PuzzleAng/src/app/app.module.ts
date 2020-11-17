@@ -8,13 +8,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { DragDropModule} from '@angular/cdk/drag-drop';
+import { LoadPuzzlesComponent } from './load-puzzles/load-puzzles.component';
+import { PuzzleComponent } from './puzzle/puzzle.component';
+import { ImageComponent } from './image/image.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadPuzzlesComponent,
+    PuzzleComponent,
+    ImageComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,
