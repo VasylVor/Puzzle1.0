@@ -15,10 +15,19 @@ h1{
     font-weight: 1000px;
 }
 
+.playBtn{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
 a{
     position: relative;
     padding: 20px 40px;
-    background: #058d9e;
+    background: #d43737;
     color: #fff;
     text-transform: uppercase;
     font-family: sans-serif;
@@ -27,16 +36,24 @@ a{
     transform-style: preserve-3d;
     transition: ease-in-out 2s;
     border-radius: 60px;
+    height: 40%;
+    width: 30%;
 }
 
 a:hover{
     transform: rotateX(360deg);
 }
 a span{
+    font: fanix;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
     display: block;
     font-weight: bold;
     transform-style: preserve-3d;
     transform: perspective(100px) translateZ(20px);
+    text-align: center;
+    text-size-adjust: inherit;
 }
 
 a:before{
@@ -47,4 +64,19 @@ a:before{
     right: 6px;
     bottom: 4px;
     border: 2px solid #fff;
+    transform-style: preserve-3d;
+    transform: perspective(600px) translateZ(15px);
+    border-radius: 60px;
+}
+a:after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 2px solid #fff;
+    transform-style: preserve-3d;
+    transform: perspective(500px) translateZ(-15px);
+    border-radius: 60px;
 }
