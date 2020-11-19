@@ -80,19 +80,7 @@
     border-color: green;
   }
 
-  /*.checkImageBox{
-    border: 4px solid transparent;
-    border-color: green;
+  .visiblePage{
+    display: none;
   }
-  
-
-  img{
-    cursor: pointer;
-  }
-  
-  img.active{
-    border: 4px solid transparent;
-    border-color: green;
-  }*/
-
  

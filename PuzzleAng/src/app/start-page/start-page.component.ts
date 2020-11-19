@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-start-page',
@@ -12,4 +12,8 @@ export class StartPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Output() playFlag = new EventEmitter<boolean>();
+  clickPlay(playFlag:any){
+    this.playFlag.emit(playFlag);
+  }
 }

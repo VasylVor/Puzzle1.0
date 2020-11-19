@@ -4,7 +4,7 @@
 </div>
  -->
 
-<!--6609-po[<div class="content" role="main">
+<!--<div class="content" role="main">
   <input type="file" (change)="OnFileSelected($event)" /> 
   <button type="button" (click)="OnGetPuzzle()">Upload</button>
  
@@ -32,5 +32,6 @@
 </div>
 -->
 <div style="height: 250px;">
-<app-start-page></app-start-page>
+<!--<app-start-page [class.visiblePage]="!nextPage" (click)="clickPlay(false);"></app-start-page>-->
+<app-load-puzzles></app-load-puzzles>
 </div>

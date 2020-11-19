@@ -5,6 +5,7 @@ import { PuzzleReq } from './Service/PuzzleReq';
 import { PuzzleResp } from './Service/PuzzleResp';
 import {StartPageComponent} from './start-page/start-page.component';
 import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
+import { LoadPuzzlesComponent } from './load-puzzles/load-puzzles.component';
 
 
 @Component({
@@ -152,6 +153,12 @@ export class AppComponent
     else{
       (<HTMLImageElement>document.getElementById('puzz_' + index)).style.borderColor = 'white';
     }
+  }
+
+  nextPage:boolean = true;
+
+  clickPlay(playFlag:any){
+    this.nextPage = playFlag;
   }
 }
 
