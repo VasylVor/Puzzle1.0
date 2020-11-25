@@ -1,0 +1,132 @@
+.header{
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background: white;
+    border-radius: 50px;
+    padding: 1%;
+    margin-bottom: 10px;
+}
+
+.header h2{
+    font-family: fanix;
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+    color: transparent;
+    background-image: url(https://media.giphy.com/media/1Su0BeFy6fXXGa977m/giphy.gif);
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.header .logo{
+    font-weight: 1000px;
+}
+
+.vectorDown{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin-left: 0px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+.btnDown{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin: 0;
+    background-image: url(../../assets/Img/vector_down.jpg);
+    background-size: cover;
+}
+
+.btnDown:focus{
+    border-radius:25px;
+    outline: 10px;
+}
+
+.btnUp{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin: 0;
+    background-image: url(../../assets/Img/vector_up.jpg);
+    background-size: cover;
+}
+
+.btnUp:focus{
+    border-radius:25px;
+    outline: 10px;
+}
+
+.formLoad{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    background: rgb(5, 5, 5);
+    border-radius: 50px;
+    padding: 1%;
+    
+    margin-bottom: 10px;
+}
+
+.game{
+    position: relative;
+    width: 100%;
+    height: 75%;
+    background: white;
+    border-radius: 50px;
+    padding: 1%;
+    display: none;
+}
+
+.puzzle{
+    float: left;
+    width: 58%;
+    height: 100%;
+    background: black;
+    border-radius: 50px;
+    padding: 1%;
+    margin-right: 2px;
+}
+
+.infoBlock{
+    float: right;
+    width: 40%;
+    height: 100%;
+    background: black;
+    border-radius: 50px;
+    padding: 1%;
+    margin-right: 10px;
+}
+
+.mainImage{
+    float: top;
+    width: 100%;
+    height: 50%;
+    background: white;
+    border-radius: 50px;
+    padding: 1%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+
+.firstImage{
+    float: left;
+    width: 48%;
+    height: 50%;
+    background: white;
+    border-radius: 50px;
+    padding: 1%;
+    margin-right: 10px;
+}
+
+.secondImage{
+    float: right;
+    width: 48%;
+    height: 50%;
+    background: white;
+    border-radius: 50px;
+    padding: 1%;
+}

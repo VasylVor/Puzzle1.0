@@ -1,0 +1,15 @@
+<div class="header">
+    <h2 class="logo">
+        PUZZLE
+    </h2>
+    <button [class]="btnClass" (click)="onclick()"></button>
+</div>
+<div class="formLoad" [style.visibility] = "btnFlag ? 'hidden' : 'visible'"></div>
+<div class="game">
+    <div class="puzzle"></div>
+    <div class="infoBlock">
+        <div class="mainImage"></div>
+            <div class="firstImage"></div>
+            <div class="secondImage"></div>
+    </div>
+</div>
