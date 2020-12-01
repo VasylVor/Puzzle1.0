@@ -2,11 +2,28 @@
     <h2 class="logo">
         PUZZLE
     </h2>
-    <button [class]="btnClass" (click)="onclick()"></button>
+    <button [class]="btnClass" (click)="onclick()" ></button>
 </div>
-<div class="formLoad" [style.visibility] = "btnFlag ? 'hidden' : 'visible'"></div>
-<div class="game">
-    <div class="puzzle"></div>
+<!--<div class="formLoad" [style.visibility] = "btnFlag ? 'hidden' : 'visible'"></div>
+<div class="game" [style.visibility] = "btnFlag ? 'visible' :  'hidden' ">-->
+ <div class="formLoad" [style.display] = "btnFlag ? 'none' : 'block'">
+    <input type="file" class="uploadBox" accept="image/x-png, image/jpeg" (change)="OnFileSelected($event)"/>
+    <input type="button" class="btnPlay" value="Play" (click)="OnGetPuzzle()"/>
+ </div>
+<div class="game" [style.display] = "btnFlag ? 'block' : 'none' ">
+    <div class="puzzle">
+        <table>
+            <tbody>
+              <tr *ngFor="let a of arr(puzzleImg.column); let i = index">
+                <td *ngFor="let row of arr(puzzleImg.row); let j = index" >
+                  <div>
+                    <img id="puzz_{{i *  puzzleImg.row + j}}"  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" alt="Selected Image" height="150" width="250"  (click)="this.changedPuzzle(i *  puzzleImg.row + j)" >
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="infoBlock">
         <div class="mainImage"></div>
             <div class="firstImage"></div>

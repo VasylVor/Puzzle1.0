@@ -16,7 +16,7 @@ import { GamePageComponent } from './game-page/game-page.component';
 
 export class AppComponent 
 {
-  imageError: string;
+  /*imageError: string;
   isImageSaved: boolean;
   cardImageBase64: string;
   puzzleImg: PuzzleResp;
@@ -24,11 +24,11 @@ export class AppComponent
   puzzleLst = Array;
   arr= Array;
   image1: string;
-  image2: string;
+  image2: string;*/
 
   constructor(private httpService: PuzzleServ){}
 
-  OnFileSelected(fileInput: any) {
+  /*OnFileSelected(fileInput: any) {
     this.imageError = null;
     if (fileInput.target.files && fileInput.target.files[0]) {
         // Size Filter Bytes
@@ -94,27 +94,16 @@ export class AppComponent
     };
 
     this.puzzleImg = this.httpService.GetPuzzle(fileUplodVM);
-    /*for(let item of this.puzzleImg.imageLst)
-    {
-      this.puzzleLst.push[item];
-    }*/
+
   };
 
-  /*drop(event: CdkDragDrop<any>){
-    if(event.previousContainer === event.container){
-      moveItemInArray(event.container.data,event.previousIndex, event.currentIndex);
-    } else{
-      transferArrayItem(event.previousContainer.data, event.container.data,event.previousIndex,event.currentIndex);
-    }
-  }*/
+  
 
   drop(event: CdkDragDrop<any>){
     moveItemInArray(this.puzzleImg.imageLst,event.previousIndex, event.currentIndex);
     this.image1  = this.puzzleImg.imageLst[event.previousIndex];
     this.image2  = this.puzzleImg.imageLst[event.currentIndex];
 
-    /*this.puzzleImg.imageLst[event.previousIndex] = this.image2;
-    this.puzzleImg.imageLst[event.currentIndex] = this.image1;*/
   }
 
   flag: boolean = false;
@@ -153,7 +142,7 @@ export class AppComponent
     else{
       (<HTMLImageElement>document.getElementById('puzz_' + index)).style.borderColor = 'white';
     }
-  }
+  }*/
 
   nextPage:boolean = true;
 
