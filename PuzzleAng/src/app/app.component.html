@@ -1,38 +1,4 @@
-<!-- Toolbar
-<div class="toolbar" role="banner">
-
-</div>
- -->
-
-<!--<div class="content" role="main">
-  <input type="file" (change)="OnFileSelected($event)" /> 
-  <button type="button" (click)="OnGetPuzzle()">Upload</button>
- 
-
-    <table>
-      <thead>
-
-      </thead>
-      <tbody>
-        <tr *ngFor="let a of arr(puzzleImg.column); let i = index">
-          <td *ngFor="let row of arr(puzzleImg.row); let j = index" >
-            <div>
-              <img id="puzz_{{i *  puzzleImg.row + j}}"  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" alt="Selected Image" height="150" width="250"  (click)="this.changeIPuzzle(i *  puzzleImg.row + j)" >
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    <img [src]="image1" class="checkImageBox" alt="Selected Image" height="150" width="250">
-
-    <img [src]="image2" alt="Selected Image" height="150" width="250">
-
-</div>
--->
 <div style="height: 250px;">
-<!--<app-start-page [class.visiblePage]="!nextPage" (click)="clickPlay(false);"></app-start-page>-->
-<div class="mainBox"><app-game-page></app-game-page></div>
-
+  <!--<app-start-page [class.visiblePage]="!nextPage" (click)="clickPlay(false);"></app-start-page>-->
+  <div class="mainBox"><app-game-page></app-game-page></div>
 </div>

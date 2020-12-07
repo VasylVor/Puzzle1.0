@@ -89,11 +89,11 @@ export class GamePageComponent implements OnInit {
     }
   }
 
-    puzzleImg: PuzzleResp;
+    puzzleImg: PuzzleResp ;
 
     OnGetPuzzle()
     {
-      var fileUplodVM: PuzzleReq=
+      var fileUplodVM: PuzzleReq =
       {
         Id:1,
         BImage: this.cardImageBase64,
@@ -135,11 +135,13 @@ export class GamePageComponent implements OnInit {
   
     private ChangeStyleImg(flag: boolean, index: number){
       if(flag == true){
-        (<HTMLImageElement>document.getElementById('puzz_' + index)).style.border = '4px solid transparent';
+        (<HTMLImageElement>document.getElementById('puzz_' + index)).style.border = '3px solid transparent';
         (<HTMLImageElement>document.getElementById('puzz_' + index)).style.borderColor = 'green';
       }
       else{
-        (<HTMLImageElement>document.getElementById('puzz_' + index)).style.borderColor = 'white';
+        (<HTMLImageElement>document.getElementById('puzz_' + index)).style.border = '0px';
+        (<HTMLImageElement>document.getElementById('puzz_' + index)).style.borderColor = 'none';
+
       }
     }
   

@@ -2,31 +2,37 @@
     <h2 class="logo">
         PUZZLE
     </h2>
-    <button [class]="btnClass" (click)="onclick()" ></button>
+    <!--<button [class]="btnClass" (click)="onclick()" ></button>-->
 </div>
-<!--<div class="formLoad" [style.visibility] = "btnFlag ? 'hidden' : 'visible'"></div>
-<div class="game" [style.visibility] = "btnFlag ? 'visible' :  'hidden' ">-->
- <div class="formLoad" [style.display] = "btnFlag ? 'none' : 'block'">
+
+ <div class="formLoad" ><!--[style.display] = "btnFlag ? 'none' : 'block'"-->
     <input type="file" class="uploadBox" accept="image/x-png, image/jpeg" (change)="OnFileSelected($event)"/>
-    <input type="button" class="btnPlay" value="Play" (click)="OnGetPuzzle()"/>
+    <input type="button" class="btnPlay" value="Почати гру" (click)="OnGetPuzzle()"/>
  </div>
-<div class="game" [style.display] = "btnFlag ? 'block' : 'none' ">
+<div class="game" [style.display] = "puzzleImg == null ? 'none' : 'block'" ><!--[style.display] = "btnFlag ? 'block' : 'none' "-->
     <div class="puzzle">
         <table>
             <tbody>
               <tr *ngFor="let a of arr(puzzleImg.column); let i = index">
                 <td *ngFor="let row of arr(puzzleImg.row); let j = index" >
                   <div>
-                    <img id="puzz_{{i *  puzzleImg.row + j}}"  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" alt="Selected Image" height="150" width="250"  (click)="this.changedPuzzle(i *  puzzleImg.row + j)" >
+                    <img id="puzz_{{i *  puzzleImg.row + j}}"  [src]="puzzleImg.imageLst[i *  puzzleImg.row + j]" class="imgPuzzle" alt="Selected Image" height="150" width="250"  (click)="this.changedPuzzle(i *  puzzleImg.row + j)" >
                   </div>
                 </td>
               </tr>
             </tbody>
         </table>
     </div>
+    <input type="button" class="btnCheck" value="Перевірити"/>
     <div class="infoBlock">
-        <div class="mainImage"></div>
-            <div class="firstImage"></div>
-            <div class="secondImage"></div>
+        <div class="mainImage">
+          <img id="imgMain" [src]="cardImageBase64" [style.display] = "cardImageBase64 == null ? 'none' : 'block'"  class="img">
+        </div>
+            <div class="firstImage">
+              <img id="imgFirst" [src]="image1" [style.display] = "image1 == null ? 'none' : 'block'"  class="img">
+            </div>
+            <div class="secondImage">
+              <img id="imgSecond" [src]="image2" [style.display] = "image2 == null ? 'none' : 'block'"  class="img">
+            </div>
     </div>
 </div>

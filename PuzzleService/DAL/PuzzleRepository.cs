@@ -13,17 +13,12 @@ namespace PuzzleService.DAL
     public class PuzzleRepository
     {
         private readonly PuzzleDBContext context;
-        private readonly IPuzzle puz;
-
-        public PuzzleRepository(PuzzleDBContext context, IPuzzle puzzle)
+        public PuzzleRepository(PuzzleDBContext context)
         {
             this.context = context;
-            this.puz = puzzle;
         }
         public int SaveImage(string name, string image)
         {
-            //using (var transaction = context.Database.BeginTransaction())
-            //{
             try
             {
                 var paramLst = new List<SqlParameter>()
@@ -41,18 +36,14 @@ namespace PuzzleService.DAL
 
                 paramLst.Add(id);
                 context.Database.ExecuteSqlRaw("Exec dbo.SaveImages @Name, @Image, @id out", paramLst.ToArray());
-               // context.SaveChanges();
 
                 return Convert.ToInt32(id.Value);
-                //transaction.Commit();
             }
             catch (Exception e)
             {
-                //transaction.Rollback();
                 SaveError(e.Message, e.Source, e.StackTrace, e.InnerException?.ToString());
-                return 0;
+                throw new Exception(e.Message.ToString());
             }
-            //}
         }
 
         public void SaveError(string message, string methodName,string stackTrace, string innerException)
@@ -69,25 +60,45 @@ namespace PuzzleService.DAL
             context.SaveChanges();
         }
 
-        public void SavePuzzle(int idImage, Bitmap[,] puzzle, string imgType)
+        //public void SavePuzzle(int idImage, Bitmap[,] puzzle, string imgType)
+        //{
+        //    using (var transaction = context.Database.BeginTransaction())
+        //    {
+        //        try
+        //        {
+        //            for (int i = 0; i < puzzle.GetLength(0); i++)
+        //                for (int j = 0; j < puzzle.GetLength(1); j++)
+        //                {
+        //                    var paramLst = new List<SqlParameter>()
+        //                    {
+        //                        new SqlParameter("@IdImage", idImage),
+        //                        new SqlParameter("@Puzzle", imgType + puz.ConvertFromImageToBase64(puzzle[i,j]))
+        //                    };
+        //                    context.Database.ExecuteSqlRaw("Exec dbo.SavePuzzle @IdImage, @Puzzle ", paramLst.ToArray());
+        //                }
+        //            transaction.Commit();
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            SaveError(e.Message, e.Source, e.StackTrace, e.InnerException?.ToString());
+        //            transaction.Rollback();
+        //        }
+        //    }
+        //}
+
+        public void SavePuzzle(int idImage, string puzzle)
         {
             using (var transaction = context.Database.BeginTransaction())
             {
                 try
                 {
-                    for (int i = 0; i < puzzle.GetLength(0); i++)
-                        for (int j = 0; j < puzzle.GetLength(1); j++)
-                        {
-                            var paramLst = new List<SqlParameter>()
+
+                    var paramLst = new List<SqlParameter>()
                             {
                                 new SqlParameter("@IdImage", idImage),
-                                new SqlParameter("@Puzzle", imgType + puz.ConvertFromImageToBase64(puzzle[i,j]))
+                                new SqlParameter("@Puzzle", puzzle)
                             };
-                            context.Database.ExecuteSqlRaw("Exec dbo.SavePuzzle @IdImage, @Puzzle ", paramLst.ToArray());
-                        }
-
-                    
-                    
+                    context.Database.ExecuteSqlRaw("Exec dbo.SavePuzzle @IdImage, @Puzzle ", paramLst.ToArray());
 
                     transaction.Commit();
                 }
@@ -97,6 +108,22 @@ namespace PuzzleService.DAL
                     transaction.Rollback();
                 }
             }
+        }
+
+
+        public List<string> GetPuzzle(int id)
+        {
+            try
+            {
+                return context.Puzzle.Where(w => w.IdImage == id).Select(s => s.Puzzle1).ToList();
+            }
+            catch (Exception e)
+            {
+                SaveError(e.Message, e.Source, e.StackTrace, e.InnerException?.ToString());
+
+                throw new Exception(e.Message.ToString());
+            }
+
         }
     }
 }

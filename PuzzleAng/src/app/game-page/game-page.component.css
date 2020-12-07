@@ -1,7 +1,7 @@
 .header{
     position: relative;
     width: 100%;
-    height: 25%;
+    height: 15%;
     /*background: white;*/
     border-radius: 50px;
     padding: 1%;
@@ -62,7 +62,7 @@
 .formLoad{
     position: relative;
     width: 100%;
-    height: 30%;
+    height: 10%;
    /* background: rgb(5, 5, 5);*/
     border-radius: 50px;
     padding: 1%;
@@ -82,7 +82,8 @@
 ::-webkit-file-upload-button{
     color: white;
     background: brown;
-    height: 26%;
+    height: 100%;
+    width: 47%;
     padding: 20px;
     border: none;
     border-radius: 50px;
@@ -98,7 +99,7 @@
 .btnPlay{
     font-size: 90%;
     font-weight: bold;
-    height: 28%;
+    height: 100%;
     background-color: brown;
     border-radius: 50px;
     box-shadow: 5px 5px 10px black;
@@ -106,12 +107,14 @@
     outline: none;
     margin-left: 2%;
 }
-
+.btnPlay:hover{
+    background: red;
+}
 .game{
     position: unset;
     width: 100%;
     height: 75%;
-    background: white;
+  /*  background: white;*/
     border-radius: 50px;
     padding: 1%;
 }
@@ -120,17 +123,46 @@
     float: left;
     width: 58%;
     height: 100%;
-    background: black;
+    text-align: center;
+  /*  background: black;*/
     border-radius: 50px;
     padding: 1%;
     margin-right: 2px;
+}
+
+.tablePuzzle{
+    padding-bottom: 5px;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.imgPuzzle{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 2,2,2,2;
+}
+
+.btnCheck{
+    padding-top: 5px;
+    width: 40%;
+    height: 10%;
+    background-color: brown;
+    border-radius: 50px;
+}
+
+.btnCheck:hover{
+    background-color: red;
 }
 
 .infoBlock{
     float: right;
     width: 40%;
     height: 100%;
-    background: black;
+   /* background: black;*/
     border-radius: 50px;
     padding: 1%;
     margin-right: 10px;
@@ -140,7 +172,7 @@
     float: top;
     width: 100%;
     height: 50%;
-    background: white;
+  /*  background: white;*/
     border-radius: 50px;
     padding: 1%;
     margin-right: 10px;
@@ -152,7 +184,7 @@
     float: left;
     width: 48%;
     height: 50%;
-    background: white;
+    /*background: white;*/
     border-radius: 50px;
     padding: 1%;
     margin-right: 10px;
@@ -162,7 +194,7 @@
     float: right;
     width: 48%;
     height: 50%;
-    background: white;
+   /* background: white;*/
     border-radius: 50px;
     padding: 1%;
 }

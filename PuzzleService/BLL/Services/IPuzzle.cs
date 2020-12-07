@@ -8,9 +8,11 @@ namespace PuzzleService.BLL.Services
 {
     public interface IPuzzle
     {
-        Bitmap[,] GetPuzzle(Image image, int hRect, int wRect);
+        Bitmap[,] GetPuzzle(Image image, int hRect, int wRect, string name, string type);
         Bitmap[,] MixPuzzle(Bitmap[,] bitmaps);
-        Image ConvertFromBase64ToImage(string bimage, out string imgType);
+        Image ConvertFromBase64ToImage(string bimage, string name,out string imgType);
         string ConvertFromImageToBase64(Image bitMap);
+
+        bool CheckPuzz(int id, List<string> puzzels);
     }
 }
