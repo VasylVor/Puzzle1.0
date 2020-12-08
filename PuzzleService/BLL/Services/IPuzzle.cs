@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PuzzleService.ProxyClasses;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace PuzzleService.BLL.Services
         Bitmap[,] MixPuzzle(Bitmap[,] bitmaps);
         Image ConvertFromBase64ToImage(string bimage, string name,out string imgType);
         string ConvertFromImageToBase64(Image bitMap);
-
         bool CheckPuzz(int id, List<string> puzzels);
+        List<Img> GetImgLst();
+        Img GetImgById(int id);
     }
 }

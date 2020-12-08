@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PuzzleService.BLL.Services;
 using PuzzleService.Models;
+using PuzzleService.ProxyClasses;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -124,6 +125,39 @@ namespace PuzzleService.DAL
                 throw new Exception(e.Message.ToString());
             }
 
+        }
+
+        internal Img GetImgById(int id)
+        {
+            try
+            {
+                return new Img()
+                {
+                    Id = context.Image.Where(w => w.Id == id).FirstOrDefault().Id,
+                    ImgName = context.Image.Where(w => w.Id == id).FirstOrDefault().Name
+                };
+            }
+            catch (Exception e)
+            {
+                SaveError(e.Message, e.Source, e.StackTrace, e.InnerException?.ToString());
+
+                throw new Exception(e.Message.ToString());
+            }
+        }
+
+        internal List<Img> GetImgLst()
+        {
+            try
+            {
+                List<Img> lst = context.Image.Select(s =>  new Img() { Id = s.Id, ImgName = s.Name }).ToList();
+                return lst;
+            }
+            catch (Exception e)
+            {
+                SaveError(e.Message, e.Source, e.StackTrace, e.InnerException?.ToString());
+
+                throw new Exception(e.Message.ToString());
+            }
         }
     }
 }

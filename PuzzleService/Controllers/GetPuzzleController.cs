@@ -33,19 +33,19 @@ namespace PuzzleService.Controllers
             {
                 string imgType;
 
-                System.Drawing.Image img = puzzle.ConvertFromBase64ToImage(request.BImage, request.NameImage,out imgType); // concert image
+                System.Drawing.Image img = puzzle.ConvertFromBase64ToImage(request.BImage, request.NameImage, out imgType); // concert image
                 Bitmap[,] bmp = puzzle.GetPuzzle(img, 100, 100, request.NameImage, imgType);//cut imagepuzzle.GetPuzzle(img, request.WidthRect, request.HeightRect); //
-                //List<string> lstImage = new List<string>();
-                //for (int i = 0; i < bmp.GetLength(0); i++)
-                //{
-                //    for (int j = 0; j < bmp.GetLength(1); j++)
-                //    {
-                //        string imgPuz = puzzle.ConvertFromImageToBase64(bmp[i, j]);
-                //        lstImage.Add(imgType + imgPuz);
-                //    }
-                //}
+                                                                                            //List<string> lstImage = new List<string>();
+                                                                                            //for (int i = 0; i < bmp.GetLength(0); i++)
+                                                                                            //{
+                                                                                            //    for (int j = 0; j < bmp.GetLength(1); j++)
+                                                                                            //    {
+                                                                                            //        string imgPuz = puzzle.ConvertFromImageToBase64(bmp[i, j]);
+                                                                                            //        lstImage.Add(imgType + imgPuz);
+                                                                                            //    }
+                                                                                            //}
 
-              //  rp.SavePuzzle(idImage, bmp, imgType);
+                //  rp.SavePuzzle(idImage, bmp, imgType);
 
                 Bitmap[,] rndBmp = puzzle.MixPuzzle(bmp); //mix images
                 List<string> lstImage = new List<string>();
@@ -82,6 +82,38 @@ namespace PuzzleService.Controllers
                 return Ok(resp);
             }
             catch (Exception ex)
+            {
+                return this.StatusCode((int)HttpStatusCode.Conflict);
+            }
+        }
+
+        [HttpGet("GetImgLst")]
+        public ActionResult<GetImgLstResp> GetImgLst()
+        {
+            try
+            {
+                GetImgLstResp resp = new GetImgLstResp()
+                {
+                    ImgLst = puzzle.GetImgLst()
+                };
+
+                return Ok(resp);
+            }
+            catch (Exception e)
+            {
+                return this.StatusCode((int)HttpStatusCode.Conflict);
+            }
+        }
+
+        [HttpGet("GetImgById/{id}")]
+        public ActionResult<Img> GetImgById(int id)
+        {
+            try
+            {
+                Img img = puzzle.GetImgById(id);
+                return Ok(img);
+            }
+            catch (Exception)
             {
                 return this.StatusCode((int)HttpStatusCode.Conflict);
             }

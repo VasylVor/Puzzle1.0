@@ -1,6 +1,7 @@
 ﻿using PuzzleService.BLL.Services;
 using PuzzleService.DAL;
 using PuzzleService.Models;
+using PuzzleService.ProxyClasses;
 using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace PuzzleService.BLL
 {
     public class Puzzle : IPuzzle
     {
+        public PuzzleRepository Repository { get { return new PuzzleRepository(new PuzzleDBContext()); } }
         /// <summary>
         /// Ріже картинку на прямоугольники
         /// </summary>
@@ -26,7 +28,7 @@ namespace PuzzleService.BLL
             int width = image.Width / wRect;
             int height = image.Height / hRect;
             Bitmap[,] bmps = new Bitmap[height, width];
-            PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
+            //PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
            
             for (int i = 0; i < height; i++)
                 for (int j = 0; j < width; j++)
@@ -35,7 +37,7 @@ namespace PuzzleService.BLL
                     Graphics g = Graphics.FromImage(bmps[i, j]);
                     g.DrawImage(image, new Rectangle(0, 0, wRect, hRect), new Rectangle(j * wRect, i * hRect, wRect, hRect), GraphicsUnit.Pixel);
                     g.Dispose();
-                    rp.SaveImage(name,type + ConvertFromImageToBase64(bmps[i, j]));
+                    Repository.SaveImage(name,type + ConvertFromImageToBase64(bmps[i, j]));
                 }
 
             return bmps;
@@ -70,8 +72,8 @@ namespace PuzzleService.BLL
 
         public System.Drawing.Image ConvertFromBase64ToImage(string bimage,string name, out string imgType)
         {
-            PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
-            int idImage = rp.SaveImage(name, bimage); // save image
+          //  PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
+            int idImage = Repository.SaveImage(name, bimage); // save image
 
 
             int index = bimage.IndexOf(',') + 1;
@@ -102,8 +104,8 @@ namespace PuzzleService.BLL
 
         public bool CheckPuzz(int id, List<string> puzzels)
         {
-            PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
-            List<string> truePuzzle = rp.GetPuzzle(id);
+          //  PuzzleRepository rp = new PuzzleRepository(new PuzzleDBContext());
+            List<string> truePuzzle = Repository.GetPuzzle(id);
 
             for (int i = 0; i < puzzels.Count(); i++)
             {
@@ -114,6 +116,16 @@ namespace PuzzleService.BLL
             }
 
             return true;
+        }
+
+        public List<Img> GetImgLst()
+        {
+            return Repository.GetImgLst();
+        }
+
+        public Img GetImgById(int id)
+        {
+            return Repository.GetImgById(id);
         }
     }
 }
